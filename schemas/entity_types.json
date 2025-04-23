@@ -1,0 +1,56 @@
+{
+  "Entity": {
+    "description": "Base entity type",
+    "properties": {
+      "id": {"type": "string", "required": true},
+      "name": {"type": "string", "required": true},
+      "description": {"type": "string", "required": false}
+    }
+  },
+  "Concept": {
+    "description": "Represents a mathematical concept",
+    "inherits": "Entity",
+    "properties": {
+      "domain": {"type": "string", "required": true},
+      "tier": {"type": "string", "enum": ["L1", "L2", "L3"], "required": true}
+    }
+  },
+  "Symbol": {
+    "description": "Represents a mathematical symbol or notation",
+    "inherits": "Entity",
+    "properties": {
+      "notation": {"type": "string", "required": true},
+      "latex": {"type": "string", "required": false},
+      "context": {"type": "string", "required": true}
+    }
+  },
+  "Document": {
+    "description": "Represents a document source",
+    "inherits": "Entity",
+    "properties": {
+      "title": {"type": "string", "required": true},
+      "authors": {"type": "array", "required": false},
+      "year": {"type": "number", "required": false},
+      "doi": {"type": "string", "required": false}
+    }
+  },
+  "Algorithm": {
+    "description": "Represents a mathematical algorithm",
+    "inherits": "Concept",
+    "properties": {
+      "input_types": {"type": "array", "required": false},
+      "output_types": {"type": "array", "required": false},
+      "complexity": {"type": "string", "required": false},
+      "pseudocode": {"type": "string", "required": false}
+    }
+  },
+  "Method": {
+    "description": "Represents a mathematical method",
+    "inherits": "Concept",
+    "properties": {
+      "application_domains": {"type": "array", "required": false},
+      "advantages": {"type": "array", "required": false},
+      "limitations": {"type": "array", "required": false}
+    }
+  }
+}
