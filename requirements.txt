@@ -1,0 +1,11 @@
+modelcontextprotocol>=1.0.0
+neo4j>=5.9.0
+pydantic>=1.10.0
+fastapi>=0.96.0
+uvicorn>=0.22.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+jsonschema>=4.17.3
+python-json-logger>=2.0.7
+click>=8.1.4
+rich>=13.0.0
