@@ -1,0 +1,65 @@
+{
+  "REPRESENTS": {
+    "description": "Symbol represents a concept",
+    "source_types": ["Symbol"],
+    "target_types": ["Concept"],
+    "properties": {
+      "context": {"type": "string", "required": false},
+      "confidence": {"type": "number", "min": 0, "max": 1, "required": false}
+    }
+  },
+  "RELATES_TO": {
+    "description": "Concept relates to another concept",
+    "source_types": ["Concept"],
+    "target_types": ["Concept"],
+    "properties": {
+      "relationship_type": {"type": "string", "required": true},
+      "description": {"type": "string", "required": false}
+    }
+  },
+  "APPEARS_IN": {
+    "description": "Symbol or concept appears in a document",
+    "source_types": ["Symbol", "Concept"],
+    "target_types": ["Document"],
+    "properties": {
+      "location": {"type": "string", "required": false},
+      "context": {"type": "string", "required": false}
+    }
+  },
+  "IMPLEMENTS": {
+    "description": "Algorithm implements a concept",
+    "source_types": ["Algorithm"],
+    "target_types": ["Concept"],
+    "properties": {
+      "implementation_type": {"type": "string", "required": false},
+      "efficiency": {"type": "string", "required": false}
+    }
+  },
+  "USES": {
+    "description": "Method uses a concept or algorithm",
+    "source_types": ["Method", "Algorithm"],
+    "target_types": ["Concept", "Algorithm"],
+    "properties": {
+      "usage_type": {"type": "string", "required": false},
+      "description": {"type": "string", "required": false}
+    }
+  },
+  "EXTENDS": {
+    "description": "Concept or algorithm extends another",
+    "source_types": ["Concept", "Algorithm"],
+    "target_types": ["Concept", "Algorithm"],
+    "properties": {
+      "extension_type": {"type": "string", "required": false},
+      "improvements": {"type": "array", "required": false}
+    }
+  },
+  "HAS_INTERPRETATION_IN": {
+    "description": "Concept has a specific interpretation in a domain",
+    "source_types": ["Concept"],
+    "target_types": ["Concept"],
+    "properties": {
+      "domain": {"type": "string", "required": true},
+      "interpretation": {"type": "string", "required": true}
+    }
+  }
+}
